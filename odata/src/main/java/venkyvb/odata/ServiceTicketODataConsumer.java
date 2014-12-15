@@ -613,14 +613,14 @@ public class ServiceTicketODataConsumer {
 	}
 
 	private String getODataServiceUrl() {
-		return "https://_HOST_NAME_/sap/byd/odata/v1/_SERVICE_NAME_";
+		return "https://HOST_NAME/sap/byd/odata/v1/SERVICE_NAME";
 	}
 
 	private String getAuthorizationHeader() {
 		// Note: This example uses Basic Authentication
 		// Preferred option is to use OAuth SAML bearer flow.
-		String temp = new StringBuilder("_USER_NAME_").append(":")
-				.append("_PASSWORD_").toString();
+		String temp = new StringBuilder("USER_NAME").append(":")
+				.append("PASSWORD").toString();
 		String result = "Basic "
 				+ new String(Base64.encodeBase64(temp.getBytes()));
 		logger.info("AuthorizationHeader " + result);
