@@ -82,7 +82,6 @@ public class ServiceTicketODataConsumer {
 			IllegalStateException, IOException {
 
 		// This is used for both setting the Edm and CSRF Token :)
-		// The calls are essentially the same !!
 		if (m_edm != null) {
 			return m_edm;
 		}
@@ -115,6 +114,7 @@ public class ServiceTicketODataConsumer {
 		HttpResponse response = getHttpClient().execute(get);
 		return response.getEntity().getContent();
 	}
+	
 	public ODataFeed readFeed(String serviceUri, String contentType,
 			String entitySetName, SystemQueryOptions options)
 			throws IllegalStateException, IOException, EntityProviderException,
@@ -136,8 +136,6 @@ public class ServiceTicketODataConsumer {
 		EdmEntityContainer entityContainer = readEdm()
 				.getDefaultEntityContainer();
 		logger.info("Entity container is => " + entityContainer.getName());
-		// create absolute uri based on service uri, entity set name with its
-		// key property value and optional expanded relation name
 		String absolutUri = createUri(serviceUri, entitySetName, keyValue,
 				options);
 
