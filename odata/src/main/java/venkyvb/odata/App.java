@@ -9,9 +9,8 @@ import main.java.venkyvb.odata.ticket.Note;
 import main.java.venkyvb.odata.ticket.NoteType;
 import main.java.venkyvb.odata.ticket.Ticket;
 
-/**
- * Hello world!
- *
+/*
+ * Please use the data appropriate for your scenario in the calls below !!
  */
 public class App 
 {
